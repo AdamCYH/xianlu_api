@@ -31,7 +31,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
-        read_only_fields = ('last_login', 'date_joined', 'is_active')
+        read_only_fields = ('is_superuser', 'last_login', 'date_joined', 'is_active')
 
 
 class UserUpdateSerializer(serializers.ModelSerializer):
