@@ -14,8 +14,7 @@ class User(AbstractUser):
     """
     User groups: System Admin and User
     """
-    REQUIRED_FIELDS = ['first_name',
-                       'last_name', 'email', 'password']
+    REQUIRED_FIELDS = ['email', 'password']
     profile_pic = models.ImageField(default='default_profile.jpeg')
     # set up default pic
     user_id = models.UUIDField(

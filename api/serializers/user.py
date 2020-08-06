@@ -9,11 +9,19 @@ from api.models import User
 
 class UserSerializer(serializers.ModelSerializer):
     profile_pic = serializers.ImageField(required=False)
+    username = serializers.CharField(
+        required=True,
+    )
+
     password = serializers.CharField(
         write_only=True,
         required=True,
         help_text='Leave empty if no change needed',
         style={'input_type': 'password', 'placeholder': 'Password'}
+    )
+
+    email = serializers.CharField(
+        required=True,
     )
 
     def create(self, validated_data):
